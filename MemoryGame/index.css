@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+}
+
+.contingut {
+    width:650px;
+    margin: auto;
+    padding: 15px 15px;
+    background-color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+
+#memory-board{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 600px;
+}
+
+#memory-board > div{
+    display: flex;
+}
+
+
+#memory-board > div > div{
+    height: 130px;
+    width: 130px;
+    margin: 10px;
+    background-size: cover;
+    background-image: url('img/animals/carta.png');
+}
+
+
+#memory-board div.elefant.show{
+    background-image: url('img/animals/elefant.png');
+    
+}
+
+#memory-board div.hipopotam.show{
+    background-image: url('img/animals/hipopotam.png');
+    
+}
+#memory-board div.jirafa.show{
+    background-image: url('img/animals/jirafa.png');
+    
+}
+#memory-board div.koala.show{
+    background-image: url('img/animals/koala.png');
+    
+}
+#memory-board div.mico.show{
+    background-image: url('img/animals/mico.png');
+    
+}
+#memory-board div.os-gris.show{
+    background-image: url('img/animals/os-gris.png');
+    
+}
+#memory-board div.os.show{
+    background-image: url('img/animals/os.png');
+    
+}
+#memory-board div.panda.show{
+    background-image: url('img/animals/panda.png');
+    
+}
+#memory-board div.elefant.show{
+    background-image: url('img/animals/elefant.png');
+    
+}
