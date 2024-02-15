@@ -1,30 +1,41 @@
-body{
-    background-color: black;
+body {
+    background-color: #fcf3d7;
 }
 
 .contingut {
-    width:650px;
+    width: 650px;
     margin: auto;
     padding: 15px 15px;
-    background-color: white;
-    font-family:Arial, Helvetica, sans-serif;
+    background-color: #fcecb7;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
 }
 
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
-#memory-board{
+
+
+#memory-board {
     display: flex;
     flex-direction: column;
     height: 600px;
     width: 600px;
 }
 
-#memory-board > div{
+#memory-board>div {
     display: flex;
 }
 
-
-#memory-board > div > div{
+#memory-board>div>div {
     height: 130px;
     width: 130px;
     margin: 10px;
@@ -33,40 +44,59 @@ body{
 }
 
 
-#memory-board div.elefant.show{
+#memory-board div.elefant.show {
     background-image: url('img/animals/elefant.png');
-    
+
 }
 
-#memory-board div.hipopotam.show{
+#memory-board div.hipopotam.show {
     background-image: url('img/animals/hipopotam.png');
-    
+
 }
-#memory-board div.jirafa.show{
+
+#memory-board div.jirafa.show {
     background-image: url('img/animals/jirafa.png');
-    
+
 }
-#memory-board div.koala.show{
+
+#memory-board div.koala.show {
     background-image: url('img/animals/koala.png');
-    
+
 }
-#memory-board div.mico.show{
+
+#memory-board div.mico.show {
     background-image: url('img/animals/mico.png');
-    
+
 }
-#memory-board div.os-gris.show{
+
+#memory-board div.os-gris.show {
     background-image: url('img/animals/os-gris.png');
-    
+
 }
-#memory-board div.os.show{
+
+#memory-board div.os.show {
     background-image: url('img/animals/os.png');
-    
+
 }
-#memory-board div.panda.show{
+
+#memory-board div.panda.show {
     background-image: url('img/animals/panda.png');
-    
+
 }
-#memory-board div.elefant.show{
+
+#memory-board div.elefant.show {
     background-image: url('img/animals/elefant.png');
-    
+
+}
+
+.footer-section {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.footer-section p {
+    margin: 0;
 }

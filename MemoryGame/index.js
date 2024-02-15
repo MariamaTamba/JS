@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let hasFlippedCard = false;
     let lockBoard = false;
     let firstCard, secondCard;
+    let matchedCards = []; // Almacenar cartas emparejadas
 
     function flipCard() {
         if (lockBoard) return;
@@ -14,37 +15,43 @@ document.addEventListener('DOMContentLoaded', function() {
             // Primera carta volteada
             hasFlippedCard = true;
             firstCard = this;
-            return;
+        } else {
+            // Segunda carta volteada
+            secondCard = this;
+            checkForMatch();
         }
-
-        // Segunda carta volteada
-        secondCard = this;
-        checkForMatch();
     }
 
     function checkForMatch() {
-        let isMatch = firstCard.className === secondCard.className;
+        let isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
-        isMatch ? disableCards() : unflipCards();
+        if (isMatch) {
+            disableCards();
+        } else {
+            // Bloquear el tablero para evitar clics adicionales
+            lockBoard = true;
+            unflipCards();
+        }
     }
 
     function disableCards() {
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
 
-        resetBoard();
-        if (document.querySelectorAll('.show').length === cards.length) {
+        matchedCards.push(firstCard, secondCard); // Agregar cartas a las emparejadas
+
+        if (matchedCards.length === cards.length) {
+            // Verificar si todas las cartas están emparejadas
             alert('¡Felicidades! Has encontrado todas las parejas.');
         }
+
+        resetBoard();
     }
 
     function unflipCards() {
-        lockBoard = true;
-
         setTimeout(() => {
             firstCard.classList.remove('show');
             secondCard.classList.remove('show');
-
             resetBoard();
         }, 1000);
     }
@@ -61,5 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })();
 
-    cards.forEach(card => card.addEventListener('click', flipCard));
+    // Agregar evento 'click' a cada carta
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('click', flipCard);
+    }
 });
