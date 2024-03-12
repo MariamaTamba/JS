@@ -53,3 +53,5 @@ function handleDrop() {
   this.parentNode.insertBefore(draggedItem, this.nextSibling);
   setTimeout(() => draggedItem.style.display = 'block', 0);
 }
+
+
