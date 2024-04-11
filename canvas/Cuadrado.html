@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mycanva {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanva" width="600" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanva');
+        var context = canvas.getContext('2d');
+
+        var numeroDiamantes = 5;
+        var lado = 50;
+        var colores = ['rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(0, 0, 255, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)'];
+        var espacioEntreDiamantes = 10;
+
+        var anchoTotal = (lado + espacioEntreDiamantes) * numeroDiamantes - espacioEntreDiamantes;
+
+        var xInicial = (canvas.width - anchoTotal) / 2;
+
+        var x = xInicial;
+
+  
+        var y = canvas.height / 2;
+
+        for (var i = 0; i < numeroDiamantes; i++) {
+            context.fillStyle = colores[i];
+            dibujarDiamante(x, y, lado);
+            x += lado / 2 + espacioEntreDiamantes / 2;
+        }
+
+        function dibujarDiamante(x, y, lado) {
+            context.beginPath();
+
+            context.moveTo(x, y - lado / 2);
+            context.lineTo(x + lado / 2, y);
+            context.lineTo(x, y + lado / 2);
+            context.lineTo(x - lado / 2, y);
+            context.closePath();
+            context.fill(); 
+        }
+    </script>
+</body>
+</html>
