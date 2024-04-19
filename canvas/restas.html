@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mycanvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" width="600" height="200"></canvas>
+    <script>
+        let canvas = document.getElementById("mycanvas");
+        let context = canvas.getContext('2d');
+
+        // Puntos iniciales
+        let xInicial = 30;
+        let yInicial = 50;
+        let xFinal = 106;
+        let yFinal = 50;
+
+        context.beginPath(); // Inicializamos 
+        context.moveTo(xInicial, yInicial);
+        context.lineTo(xFinal, yFinal);
+
+        // Trazamos la línea 
+        context.stroke();
+    </script>
+</body>
+</html>

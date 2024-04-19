@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curvas Mariama</title>
+</head>
+<Style>
+    #mycanva {
+        border: 1px solid black;
+    }
+</Style>
+
+<body>
+    <canvas id="mycanva" height="400" width="400"></canvas>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        let canva = document.getElementById('mycanva');
+        let context = canva.getContext('2d');
+
+        let currentX = 40;
+        let cuurentY = 40;
+
+        context.moveTo(currentX, cuurentY);
+        context.bezierCurveTo(200, 50, 100, 150, 200, 100);
+        context.stroke();
+    })
+</script>
+
+</html>
