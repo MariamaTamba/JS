@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #mycanvas{
+        border: 1px solid;
+    }
+    
+</style>
+<body>
+    <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+
+<script>
+    let canvas = document.getElementById("mycanvas")
+    let context = canvas.getContext('2d');
+
+    //Definir las lineas de la cuadricula 
+    let spacing = 20; 
+
+    for (let y = 0; y <= canvas.height; y+= spacing) {
+        context.beginPath();
+        context.moveTo(0, y);
+        context.lineTo(canvas.width, y);
+        context.stroke();   
+    }
+
+    for (let x = 0; x <= canvas.width; x += spacing) {
+        context.beginPath();
+        context.moveTo(x, 0);
+        context.lineTo(x,canvas.height);
+        context.stroke();
+    }
+</script>
+</html>
