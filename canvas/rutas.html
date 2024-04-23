@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Rutas</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+
+    <script>
+        // Obtener el lienzo y su contexto
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Definir los puntos para la ruta
+        var points = [
+            { x: 50, y: 50 },
+            { x: 200, y: 50 },
+            { x: 200, y: 200 },
+            { x: 100, y: 300 },
+            { x: 50, y: 200 }
+        ];
+
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        for (let i = 0; i < points.length; i++) {
+            ctx.lineTo(points[i].x, points[i].y);
+        }
+
+        //Dibujamos la ruta 
+        ctx.closePath();
+        ctx.stroke();
+
+        //Dibujamos los puntos 
+        for (let i = 0; i < points.length; i++) {
+            ctx.beginPath();
+            ctx.arc(points[i].x, points[i].y, 5, 0, 2 * Math.PI)
+            ctx.fillStyle='red';
+            ctx.fill();
+            ctx.closePath();
+        }
+    </script>
+</body>
+
+</html>
